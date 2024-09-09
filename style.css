@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-overlay {
+    position: absolute; /* Changed from fixed to absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Matches the height of the video */
+    background: rgba(26, 25, 25, 0.7); /* Black with opacity */
+    z-index: 0; /* Ensure it’s above the video but below the content */
+}
+
+.full-height {
+    height: 100vh;
+    position: relative; /* Ensure child elements are positioned relative to this */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fffef3 !important;
+}
+
+/* Navbar in its initial state */
+.navbar-custom {
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-scrolled {
+    background-color: #fffef3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow at the bottom */
+}
+
+.navbar-scrolled .nav-link {
+    color: black !important;
+}
+
+.navbar-scrolled .navbar-nav .nav-link::after {
+    background-color: black;
+}
+/* Book Now button styles when navbar is scrolled */
+.navbar-scrolled .book-btn {
+    color: black !important; /* Change text color to black */
+    border: 1px solid black !important; /* Change border to black */
+}
+
+.navbar-scrolled .book-btn:hover {
+    background: black !important;
+    color: white !important;
+}
+
+.navbar {
+    padding: 20px 100px !important;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: white;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 5px;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease; 
+}
+
+.custom-offcanvas .nav-link::after {
+    content: none;
+}
+
+.custom-offcanvas .nav-link:hover {
+    color: white !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar-nav .act {
+    color: white;
+    border-bottom: 2.5px solid black;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-nav .nav-link:hover:not(.act)::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar-nav .act:hover::after {
+    content: none;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.navbar-collapse {
+    justify-content: center;
+}
+
+.custom-offcanvas .offcanvas-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.offcanvas-body .navbar-nav .nav-link {
+    color: white;
+    font-size: 20px;
+}
+
+.custom-offcanvas {
+    background-color: white !important;
+    height: 100vh;
+}
+
+
+.book-btn:hover {
+    color: black !important;
+    background-color: white !important;
+    padding: 10px;
+    border: 1px solid white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 576px) {
+    
+    .custom-offcanvas {
+        width: 250px !important;
+    }
+
+    .navbar {
+        padding: 20px !important;
+    }
+
+}
