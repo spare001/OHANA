@@ -6,6 +6,7 @@
     <title>OHANA Private Resort</title>
     <link rel="icon" href="img/logo-png.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -15,51 +16,28 @@
 </head>
 <body>
 
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Logo on the Left -->
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo-png.png" width="55px" height="45px" alt="Logo"/>
+        </a>
 
-    <!-- Full-height section with video background -->
-    <section class="full-height position-relative">
-        <!-- Video Background -->
-        <video class="video-background" autoplay muted loop>
-            <source src="img/IMG_7315.MOV" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <!-- Logo on the Left -->
-            <a class="navbar-brand" href="index.html">
-                <img src="img/logo-png.png" width="55px" height="45px" alt="Logo"/>
-            </a>
-    
-            <!-- Burger Menu Button for Small Devices -->
-            <button class="nav-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="background: transparent; border: none;">
-                <img src="img/burger-menu.png" width="50px" alt="Menu">
-            </button>
-    
-            <!-- Offcanvas for Small Devices -->
-            <div class="offcanvas offcanvas-end d-lg-none custom-offcanvas" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header">
-                    <button type="button" style="padding-right: 30px;" class="btn nav-btn-close mt-2" data-bs-dismiss="offcanvas" aria-label="Close">
-                        <img src="img/close.png" width="20px" alt="Menu">
-                    </button>
-                </div>
-                <!-- Navlinks for Small Devices -->
-                <div class="offcanvas-body">
-                    <div class="navbar-nav">
-                        <br><br>
-                        <a class="nav-link" href="index.html">HOME</a>
-                        <a class="nav-link" href="about.html">ABOUT</a>
-                        <a class="nav-link" href="gallery.html">GALLERY</a>
-                        <a class="nav-link" href="#">OFFERS</a>
-                        <a class="nav-link" href="#">ACCOMMODATIONS</a>
-                        <a class="nav-link" href="#">FACILITIES</a>
-                        <a class="nav-link" href="#">BOOK NOW</a>
-                    </div>
-                </div>
+        <!-- Burger Menu Button for Small Devices -->
+        <button class="nav-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="background: transparent; border: none;">
+            <img src="img/burger-menu.png" width="50px" alt="Menu">
+        </button>
+
+        <!-- Offcanvas for Small Devices -->
+        <div class="offcanvas offcanvas-end d-lg-none custom-offcanvas" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <button class="btn mt-2" data-bs-dismiss="offcanvas" aria-label="Close" style="background: transparent; border: none; font-size: 24px; padding-right: 30px;">
+                    <i class="fa-solid fa-x"></i>
+                </button>
             </div>
-    
-            <!-- Navlinks for Large Devices on the Right -->
-            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end" id="navbarNavAltMarkup">
+            <!-- Navlinks for Small Devices -->
+            <div class="offcanvas-body">
                 <div class="navbar-nav">
                     <a class="nav-link" href="index.html">HOME</a>
                     <a class="nav-link" href="about.html">ABOUT</a>
@@ -67,12 +45,136 @@
                     <a class="nav-link" href="#">OFFERS</a>
                     <a class="nav-link" href="#">ACCOMMODATIONS</a>
                     <a class="nav-link" href="#">FACILITIES</a>
-                    <a class="nav-link book-btn d-lg-block" href="tel:+639634937082" style="border: 1px solid white; padding: 10px 20px; margin-left: 30px;">BOOK NOW</a>
+                    <a class="nav-link" href="#">BOOK NOW</a>
+                </div>
+                <!-- Toggle Button for Dark/Light Mode in Offcanvas -->
+            <div class="offcanvas-footer">
+                <button id="toggle-mode-sm" class="btn" style="background: transparent; border: none; font-size: 24px; padding: 15px;">
+                    <i id="toggle-icon-sm" class="fas fa-moon"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+
+        <!-- Navlinks for Large Devices on the Right -->
+        <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">HOME</a>
+                <a class="nav-link" href="about.html">ABOUT</a>
+                <a class="nav-link" href="gallery.html">GALLERY</a>
+                <a class="nav-link" href="#">OFFERS</a>
+                <a class="nav-link" href="#">ACCOMMODATIONS</a>
+                <a class="nav-link" href="#">FACILITIES</a>
+                <a class="nav-link book-btn d-lg-block" href="tel:+639634937082" style="border: 1px solid white; padding: 10px 20px; margin-left: 30px;">BOOK NOW</a>
+
+                <!-- Dark/Light Mode Toggle -->
+                <!-- Dark/Light Mode Toggle -->
+                <button id="toggle-mode" class="btn" style="margin-left: 15px; background: transparent; border: none; font-size: 24px;">
+                    <i id="toggle-icon" class="fas fa-moon"></i>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Full-height section with video background -->
+    <div class="full-height position-relative">
+        <!-- Video Background -->
+        <video class="video-background" autoplay muted loop>
+            <source src="img/landing.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+
+
+<section class="about-section" style="width: 100%;">
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+            <!-- Left Column: Text -->
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3">
+                <h2 class="mb-3">Discover OHANA Private Resort</h2>
+                <p>
+                    Welcome to OHANA Private Resort, your serene getaway where the ocean meets luxury. 
+                    Our resort offers a unique blend of elegance and comfort, designed to provide you 
+                    with the ultimate vacation experience. Nestled in the heart of nature, OHANA is the perfect 
+                    destination for those seeking peace, relaxation, and adventure.
+                </p>
+                <p>
+                    Whether you're lounging by the pool, enjoying a gourmet meal, or taking part in one of 
+                    our many activities, OHANA offers something for everyone. Join us for an unforgettable 
+                    experience and create memories that will last a lifetime.
+                </p>
+                <!-- View More Button -->
+                <div class="d-flex justify-content-start">
+                    <a href="#more-info" class="btn viewmore-btn mt-4">View More</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Images -->
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center">
+                        <img src="img/about1.jpg" alt="Resort View" class="img-fluid" style="width: 400px; height: auto;">
+                    </div>
+                    <div class="col-12 col-sm-6 d-flex justify-content-center">
+                        <img src="img/about2.jpg" alt="Resort Pool" class="img-fluid" style="width: 400px; height: auto;">
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
+
+
+<div class="heading d-flex align-items-center justify-content-center" style="width: 100%; height: 50vh; padding: 50px 20px;">
+    <div class="container text-center">
+        <h1 class="">FIND YOUR COMFORT, BUILD YOUR BONDS, AND DISCOVER THE WARMTH OF HOME</h1>
+    </div>
+</div>
+
+
+
+
+<section class="about-section" style="width: 100%;">
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+            <!-- Left Column: Text -->
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3">
+                <h2 class="mb-3">About OHANA Private Resort</h2>
+                <p>
+                    Welcome to OHANA Private Resort, your serene getaway where the ocean meets luxury. 
+                    Our resort offers a unique blend of elegance and comfort, designed to provide you 
+                    with the ultimate vacation experience. Nestled in the heart of nature, OHANA is the perfect 
+                    destination for those seeking peace, relaxation, and adventure.
+                </p>
+                <p>
+                    Whether you're lounging by the pool, enjoying a gourmet meal, or taking part in one of 
+                    our many activities, OHANA offers something for everyone. Join us for an unforgettable 
+                    experience and create memories that will last a lifetime.
+                </p>
+                <!-- View More Button -->
+                <div class="d-flex justify-content-start">
+                    <a href="#more-info" class="btn viewmore-btn mt-4">View More</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Images -->
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center">
+                        <img src="img/about1.jpg" alt="Resort View" class="img-fluid" style="width: 400px; height: auto;">
+                    </div>
+                    <div class="col-12 col-sm-6 d-flex justify-content-center">
+                        <img src="img/about2.jpg" alt="Resort Pool" class="img-fluid" style="width: 400px; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
@@ -100,15 +202,48 @@
 
 
 
+<script>
+    // Get the toggle button, body element, and icon element
+    const toggleButton = document.getElementById('toggle-mode-sm');
+    const body = document.body;
+    const toggleIcon = document.getElementById('toggle-icon-sm');
 
+    // Add event listener for the toggle button
+    toggleButton.addEventListener('click', function() {
+        // Toggle the 'dark-mode' class on the body
+        body.classList.toggle('dark-mode');
 
+        // Change the icon depending on the mode
+        if (body.classList.contains('dark-mode')) {
+            toggleIcon.classList.remove('fa-moon');
+            toggleIcon.classList.add('fa-sun');
+        } else {
+            toggleIcon.classList.remove('fa-sun');
+            toggleIcon.classList.add('fa-moon');
+        }
+    });
+</script>
+<script>
+    // Get the toggle button, body element, and icon element
+    const toggleButton = document.getElementById('toggle-mode');
+    const body = document.body;
+    const toggleIcon = document.getElementById('toggle-icon');
 
+    // Add event listener for the toggle button
+    toggleButton.addEventListener('click', function() {
+        // Toggle the 'dark-mode' class on the body
+        body.classList.toggle('dark-mode');
 
-
-
-
-
-
+        // Change the icon depending on the mode
+        if (body.classList.contains('dark-mode')) {
+            toggleIcon.classList.remove('fa-moon');
+            toggleIcon.classList.add('fa-sun');
+        } else {
+            toggleIcon.classList.remove('fa-sun');
+            toggleIcon.classList.add('fa-moon');
+        }
+    });
+</script>
 
 
 <script>
