@@ -356,7 +356,7 @@ h2 {
     bottom: 0;
     right: 0;
     width: 100%;
-    padding: 15px; /* Adjust padding as needed */
+    padding: 15px 15px 35px 15px; /* Adjust padding as needed */
     background: transparent;
     display: flex;
     justify-content: flex-end; /* Align button to the right */
