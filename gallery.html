@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OHANA Private Resort</title>
+    <link rel="icon" href="img/logo-png.png" type="image/x-icon">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="mode.js"></script>
+    <script>
+        (function() {
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode) {
+                document.documentElement.classList.add(savedMode);
+            } else {
+                document.documentElement.classList.add('light-mode'); // Default to light mode
+            }
+        })();
+    </script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Logo on the Left -->
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo-png.png" width="55px" height="45px" alt="Logo"/>
+        </a>
+
+        <!-- Burger Menu Button for Small Devices -->
+        <button class="nav-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="background: transparent; border: none;">
+            <img src="img/burger-menu.png" width="50px" alt="Menu">
+        </button>
+
+        <!-- Offcanvas for Small Devices -->
+        <div class="offcanvas offcanvas-end d-lg-none custom-offcanvas" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <button class="btn mt-2" data-bs-dismiss="offcanvas" aria-label="Close" style="background: transparent; border: none; font-size: 24px; padding-right: 30px;">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <!-- Navlinks for Small Devices -->
+            <div class="offcanvas-body">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="index.html">HOME</a>
+                    <a class="nav-link" href="about.html">ABOUT</a>
+                    <a class="nav-link" href="gallery.html">GALLERY</a>
+                    <a class="nav-link" href="#">OFFERS</a>
+                    <a class="nav-link" href="#">ACCOMMODATIONS</a>
+                    <a class="nav-link" href="#">FACILITIES</a>
+                    <a class="nav-link" href="#">BOOK NOW</a>
+                </div>
+                <!-- Toggle Button for Dark/Light Mode in Offcanvas -->
+            <div class="offcanvas-footer">
+                <button id="toggle-mode-sm" class="btn" style="background: transparent; border: none; font-size: 24px; padding: 15px;">
+                    <i id="toggle-icon-sm" class="fas fa-moon"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+
+        <!-- Navlinks for Large Devices on the Right -->
+        <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">HOME</a>
+                <a class="nav-link" href="about.html">ABOUT</a>
+                <a class="nav-link" href="gallery.html">GALLERY</a>
+                <a class="nav-link" href="#">OFFERS</a>
+                <a class="nav-link" href="#">ACCOMMODATIONS</a>
+                <a class="nav-link" href="#">FACILITIES</a>
+                <a class="book-btn d-lg-block" href="tel:+639634937082" style="color: white; text-decoration: none; border: 1px solid white; padding: 10px 20px; margin-left: 30px;">BOOK NOW</a>
+
+                <!-- Dark/Light Mode Toggle -->
+                <button id="toggle-mode" class="btn" style="margin-left: 15px; background: transparent; border: none; font-size: 24px;">
+                    <i id="toggle-icon" class="fas fa-moon"></i>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="heading d-flex align-items-center justify-content-center">
+    <div class="container text-center">
+        <h3 style="letter-spacing: 2px; color: white !important;">INTRODUCING</h3>
+        <h1 class="">OHANA PRIVATE RESORT</h1>
+        <p>Where Every Detail is Tailored for You</p>
+        <br>
+        <a href="about.html">
+            <img src="img/play.png" width="100px" class="play-button">
+        </a>        
+    </div>
+</div>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery py-5">
+    <div class="container">
+        <div class="row g-4" id="gallery-container">
+            <!-- Gallery items will be injected here by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Modals will be injected here by JavaScript -->
+
+<!-- Footer -->
+<footer class="footer" style="width: 100%; padding: 150px 25px;">
+    <div class="container text-center">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/YourPage" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/YourProfile" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/YourProfile" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/YourProfile" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <p class="mt-3">© 2024 OHANA Private Resort. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/bs5-lightbox@1.12.1/dist/index.bundle.min.js"></script>
+<script>
+    // Array of image data
+    const images = [
+        { src: 'img/about.jpg', title: 'Gallery Image 1' },
+        { src: 'img/about.jpg', title: 'Gallery Image 2' },
+        { src: 'img/about.jpg', title: 'Gallery Image 3' },
+        { src: 'img/about.jpg', title: 'Gallery Image 4' },
+        { src: 'img/about.jpg', title: 'Gallery Image 5' },
+        { src: 'img/about.jpg', title: 'Gallery Image 6' },
+        { src: 'img/about.jpg', title: 'Gallery Image 7' },
+        { src: 'img/about.jpg', title: 'Gallery Image 8' },
+        { src: 'img/about.jpg', title: 'Gallery Image 9' },
+        { src: 'img/about.jpg', title: 'Gallery Image 10' },
+        { src: 'img/about.jpg', title: 'Gallery Image 11' },
+        { src: 'img/about.jpg', title: 'Gallery Image 12' },
+        { src: 'img/about.jpg', title: 'Gallery Image 13' },
+        { src: 'img/about.jpg', title: 'Gallery Image 14' },
+        { src: 'img/about.jpg', title: 'Gallery Image 15' },
+        { src: 'img/about.jpg', title: 'Gallery Image 16' },
+        { src: 'img/about.jpg', title: 'Gallery Image 17' },
+        { src: 'img/about.jpg', title: 'Gallery Image 18' },
+        { src: 'img/about.jpg', title: 'Gallery Image 19' },
+        { src: 'img/about.jpg', title: 'Gallery Image 20' },
+        { src: 'img/about.jpg', title: 'Gallery Image 21' },
+        { src: 'img/about.jpg', title: 'Gallery Image 22' },
+        { src: 'img/about.jpg', title: 'Gallery Image 23' },
+        { src: 'img/about.jpg', title: 'Gallery Image 24' }
+    ];
+
+    // Function to create gallery items
+    function createGalleryItems() {
+        const galleryContainer = document.getElementById('gallery-container');
+        const modalsContainer = document.createElement('div');
+
+        images.forEach((image, index) => {
+            // Create gallery item
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'col-12 col-md-6 col-lg-3';
+            galleryItem.innerHTML = `
+                <a href="${image.src}" data-bs-toggle="lightbox" data-gallery="gallery" data-bs-title="${image.title}">
+                    <img src="${image.src}" class="img-fluid" alt="${image.title}">
+                </a>
+            `;
+            galleryContainer.appendChild(galleryItem);
+
+            // Create modal
+            const modal = document.createElement('div');
+            modal.className = 'modal fade';
+            modal.id = `modal${index + 1}`;
+            modal.tabIndex = '-1';
+            modal.setAttribute('aria-labelledby', `modalLabel${index + 1}`);
+            modal.setAttribute('aria-hidden', 'true');
+            modal.innerHTML = `
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel${index + 1}">${image.title}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="${image.src}" class="img-fluid" alt="${image.title}">
+                        </div>
+                    </div>
+                </div>
+            `;
+            modalsContainer.appendChild(modal);
+        });
+
+        // Append modals to body
+        document.body.appendChild(modalsContainer);
+    }
+
+    // Initialize gallery
+    createGalleryItems();
+
+    // Smooth scroll function
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+</script>
+</body>
+</html>
