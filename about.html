@@ -12,7 +12,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="mode.js"></script>  
+    <script>
+        (function() {
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode) {
+                document.documentElement.classList.add(savedMode);
+            } else {
+                document.documentElement.classList.add('light-mode'); // Default to light mode
+            }
+        })();
+    </script>
 </head>
 <body>
 
@@ -232,29 +243,6 @@
 
 
 <script>
-    // Function to toggle dark/light mode
-    function toggleDarkMode(buttonId, iconId) {
-        const toggleButton = document.getElementById(buttonId);
-        const body = document.body;
-        const toggleIcon = document.getElementById(iconId);
-
-        toggleButton.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-
-            if (body.classList.contains('dark-mode')) {
-                toggleIcon.classList.remove('fa-moon');
-                toggleIcon.classList.add('fa-sun');
-            } else {
-                toggleIcon.classList.remove('fa-sun');
-                toggleIcon.classList.add('fa-moon');
-            }
-        });
-    }
-
-    // Initialize dark/light mode toggles
-    toggleDarkMode('toggle-mode-sm', 'toggle-icon-sm');
-    toggleDarkMode('toggle-mode', 'toggle-icon');
-
     // Smooth scroll function
     function scrollToSection(sectionId) {
         const element = document.getElementById(sectionId);
@@ -262,16 +250,6 @@
             element.scrollIntoView({ behavior: 'smooth' });
         }
     }
-
-    // Sticky navbar effect
-    window.addEventListener('scroll', function () {
-        const navbar = document.querySelector('.navbar-custom');
-        if (window.scrollY > 50) { // Adjust the value '50' as needed
-            navbar.classList.add('navbar-scrolled');
-        } else {
-            navbar.classList.remove('navbar-scrolled');
-        }
-    });
 </script>
 
 
