@@ -10,22 +10,7 @@ html {
 }
 
 body {
-    background-image: 
-        linear-gradient(
-            rgba(0, 0, 0, 0.5), /* Black gradient with 50% opacity */
-            rgba(0, 0, 0, 0.5) /* Black gradient with 50% opacity */
-        ),
-        url('img/building.jpg'); /* Replace with your image path */
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating the image */
-    background-attachment: fixed; /* Keep the background fixed during scroll */
-}
-
-
-section {
     background: #fffef3 !important;
-    padding: 150px 20px;
 }
 
 /* Dark Mode Styles */
@@ -51,8 +36,9 @@ body.dark-mode .navbar-scrolled .nav-link {
 }
 
 body.dark-mode .navbar-scrolled .book-btn {
-    color: white !important; /* Change text color to black */
+    color: black !important; /* Change text color to black */
     background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
+    border: none !important;
 }
 
 body.dark-mode .offcanvas-body .navbar-nav .nav-link {
@@ -73,15 +59,31 @@ body.dark-mode .fa-x {
     color: #fff !important;
 }
 
+body.dark-mode .services {
+    background-color: rgb(255, 223, 163) !important;
+}
+
+body.dark-mode .services p{
+    color: black !important;
+}
+
+body.dark-mode .services h2{
+    background: linear-gradient(-90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+
+
 /* Default icon color (light mode) */
 #toggle-icon {
     color: #ffffff; /* Black color for the moon icon in light mode */
-    transition: color 0.3s ease; /* Smooth transition */
 }
 
 #toggle-icon-sm {
     color: black; /* Black color for the moon icon in light mode */
-    transition: color 0.3s ease; /* Smooth transition */
 }
 
 .custom-offcanvas #toggle-icon.fa-moon {
@@ -116,12 +118,44 @@ h2 {
 }
 
 .heading {
-    background: transparent !important;
-    height: 300px;
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5), /* Black gradient with 50% opacity */
+            rgba(0, 0, 0, 0.5) /* Black gradient with 50% opacity */
+        ),
+        url('img/heading1.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
+    width: 100%;
+    padding: 50px 20px;
 }
 
-.heading h1 {
+.heading h1, .heading-2 h1 {
     color: white !important;
+    font-size: 50px;
+    font-family: "Playfair Display", serif;
+    margin-top: -10px;
+}
+
+.heading p, .heading-2 p {
+    color: white !important;
+}
+
+.heading-2 {
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5), /* Black gradient with 50% opacity */
+            rgba(0, 0, 0, 0.5) /* Black gradient with 50% opacity */
+        ),
+        url('img/about.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
+    width: 100%;
+    padding: 50px 20px;
 }
 
 .video-background {
@@ -150,7 +184,14 @@ h2 {
     position: relative; /* Ensure child elements are positioned relative to this */
 }
 
+/* Play Button Styles */
+.play-button {
+    transition: transform 1s ease;
+}
 
+.play-button:hover {
+    transform: scale(1.1); /* Slightly increase the size */
+}
 
 /* Navbar in its initial state */
 .navbar-custom {
@@ -175,14 +216,28 @@ h2 {
 }
 /* Book Now button styles when navbar is scrolled */
 .navbar-scrolled .book-btn {
-    color: black !important; /* Change text color to black */
-    background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%) !important;
+        color: black !important;
+        background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%) !important;
+        padding: 10px; /* Ensure padding is consistent */    
 }
 
-.navbar-scrolled .book-btn:hover {
+/* Base styles for the book button */
+.book-btn {
+    color: black !important;
+    background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%) !important;
+    border: none !important;
+    padding: 10px;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease; /* Smooth transition */
+}
+
+/* Hover styles for the book button */
+.book-btn:hover {
     background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
     color: black !important;
+    border: none !important;
+    /* No need for transform or other properties since hover state should remain consistent */
 }
+
 
 .navbar-scrolled #toggle-icon {
     color: black; /* Black color for the moon icon in light mode */
@@ -261,6 +316,12 @@ h2 {
     content: none;
 }
 
+/* Apply hover effect to other nav-links excluding .book-btn */
+.navbar-nav .nav-link:not(.book-btn):hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 .sticky-top {
     position: sticky;
     top: 0;
@@ -302,15 +363,6 @@ h2 {
     align-items: center;
 }
 
-
-
-.book-btn:hover {
-    color: black !important;
-    background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
-    padding: 10px;
-    border: 1px solid white !important;
-}
-
 .viewmore-btn {
     background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
     padding: 5px 35px !important;
@@ -319,6 +371,40 @@ h2 {
 
 
 
+
+.footer {
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.6), /* Black gradient with 50% opacity */
+            rgba(0, 0, 0, 0.6) /* Black gradient with 50% opacity */
+        ),
+        url('img/blue.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
+}
+
+.footer .fab {
+    margin-bottom: 10px;
+}
+
+.footer .fab {
+    color: #fff !important; /* White icon color */
+    font-size: 24px; /* Icon size */
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer .fab:hover {
+    color: #ddd; /* Light color on hover */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+}
 
 
 
