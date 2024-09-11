@@ -5,6 +5,125 @@
     font-family: "Barlow Condensed", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5), /* Black gradient with 50% opacity */
+            rgba(0, 0, 0, 0.5) /* Black gradient with 50% opacity */
+        ),
+        url('img/building.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
+}
+
+
+section {
+    background: #fffef3 !important;
+    padding: 150px 20px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    color: white; /* Text color in dark mode */
+}
+
+body.dark-mode section {
+    background-color: black !important; /* Background color of sections in dark mode */
+}
+
+body.dark-mode p {
+    color: white; /* Paragraph text color in dark mode */
+}
+
+body.dark-mode .navbar-scrolled {
+    background-color: black !important;
+    box-shadow: 0 4px 8px rgba(255, 157, 0, 0.3); /* Adds a shadow at the bottom */
+}
+
+body.dark-mode .navbar-scrolled .nav-link {
+    color: white !important;
+}
+
+body.dark-mode .navbar-scrolled .book-btn {
+    color: white !important; /* Change text color to black */
+    background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
+}
+
+body.dark-mode .offcanvas-body .navbar-nav .nav-link {
+    color: black;
+    font-size: 20px;
+}
+
+body.dark-mode .custom-offcanvas {
+    background-color: black !important;
+    height: 100vh;
+}
+
+body.dark-mode .custom-offcanvas .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+body.dark-mode .fa-x {
+    color: #fff !important;
+}
+
+/* Default icon color (light mode) */
+#toggle-icon {
+    color: #ffffff; /* Black color for the moon icon in light mode */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+#toggle-icon-sm {
+    color: black; /* Black color for the moon icon in light mode */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.custom-offcanvas #toggle-icon.fa-moon {
+    color: black;
+}
+
+/* Icon color for dark mode */
+body.dark-mode #toggle-icon.fa-moon {
+    color: #fff; /* White color for the moon icon in dark mode */
+}
+
+body.dark-mode #toggle-icon.fa-sun {
+    color: #fff; /* White color for the sun icon in dark mode */
+}
+
+/* Icon color for dark mode */
+body.dark-mode #toggle-icon-sm.fa-moon {
+    color: #fff; /* White color for the moon icon in dark mode */
+}
+
+body.dark-mode #toggle-icon-sm.fa-sun {
+    color: #fff; /* White color for the sun icon in dark mode */
+}
+
+
+h2 {
+    background: linear-gradient(-90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.heading {
+    background: transparent !important;
+    height: 300px;
+}
+
+.heading h1 {
+    color: white !important;
+}
+
 .video-background {
     position: absolute;
     top: 0;
@@ -22,21 +141,16 @@
     width: 100%;
     height: 100%; /* Matches the height of the video */
     background: rgba(26, 25, 25, 0.7); /* Black with opacity */
-    z-index: 0; /* Ensure it’s above the video but below the content */
+    z-index: 1; /* Ensure it’s above the video but below the content */
 }
 
 .full-height {
+    margin-top: -90px;
     height: 100vh;
     position: relative; /* Ensure child elements are positioned relative to this */
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
-body {
-    background-color: #fffef3 !important;
-}
 
 /* Navbar in its initial state */
 .navbar-custom {
@@ -62,20 +176,32 @@ body {
 /* Book Now button styles when navbar is scrolled */
 .navbar-scrolled .book-btn {
     color: black !important; /* Change text color to black */
-    border: 1px solid black !important; /* Change border to black */
+    background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%) !important;
 }
 
 .navbar-scrolled .book-btn:hover {
-    background: black !important;
-    color: white !important;
+    background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
+    color: black !important;
+}
+
+.navbar-scrolled #toggle-icon {
+    color: black; /* Black color for the moon icon in light mode */
+    transition: color 0.3s ease; /* Smooth transition */
 }
 
 .navbar {
     padding: 20px 100px !important;
+    height: 90px;
 }
 
 .navbar-custom .navbar-nav .nav-link {
     color: white;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.custom-offcanvas .offcanvas-body .navbar-nav .nav-link {
+    color: black !important;
     margin: 0 10px;
     padding: 10px;
 }
@@ -105,7 +231,7 @@ body {
 }
 
 .custom-offcanvas .nav-link:hover {
-    color: white !important;
+    color: orange !important;
     font-weight: 500;
 }
 
@@ -115,8 +241,13 @@ body {
 }
 
 .navbar-nav .act {
-    color: white;
-    border-bottom: 2.5px solid black;
+    color: orange !important;
+    position: relative;
+    z-index: 1;
+}
+
+.custom-offcanvas .navbar-nav .act {
+    color: orange !important;
     position: relative;
     z-index: 1;
 }
@@ -151,16 +282,39 @@ body {
 }
 
 .custom-offcanvas {
-    background-color: white !important;
+    background: #fffef3 !important;
     height: 100vh;
 }
+
+.offcanvas-body {
+    padding-bottom: 60px; /* Ensure there's space at the bottom for the footer */
+}
+
+.offcanvas-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px; /* Adjust padding as needed */
+    background: transparent;
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    align-items: center;
+}
+
 
 
 .book-btn:hover {
     color: black !important;
-    background-color: white !important;
+    background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
     padding: 10px;
     border: 1px solid white !important;
+}
+
+.viewmore-btn {
+    background: linear-gradient(90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
+    padding: 5px 35px !important;
+    border-radius: 0px !important;
 }
 
 
@@ -184,6 +338,10 @@ body {
 
     .navbar {
         padding: 20px !important;
+    }
+
+    .viewmore-btn {
+        width: 100%;
     }
 
 }
