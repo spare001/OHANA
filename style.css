@@ -486,7 +486,7 @@ h2 {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 20px 30px !important;
+        padding: 20px !important;
         height: 90px;
     }
 }
