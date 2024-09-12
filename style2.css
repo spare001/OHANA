@@ -423,6 +423,14 @@ h2 {
         padding: 20px !important;
         height: 90px;
     }
+
+    .gallery-header {
+        height: 70vh !important;
+    }
+
+    .about-header {
+        height: 70vh !important;
+    }
 }
 
 @media (max-width: 936px) {
