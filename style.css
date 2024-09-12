@@ -483,3 +483,24 @@ h2 {
     }
 
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 30px !important;
+        height: 90px;
+    }
+}
+
+@media (max-width: 936px) {
+    .navbar {
+        padding: 20px 50px !important;
+        height: 90px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding: 20px !important;
+        height: 90px;
+    }
+}
