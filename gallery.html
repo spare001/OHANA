@@ -56,7 +56,7 @@
                     <a class="nav-link" href="#">OFFERS</a>
                     <a class="nav-link" href="#">ACCOMMODATIONS</a>
                     <a class="nav-link" href="#">FACILITIES</a>
-                    <a class="nav-link" href="#">BOOK NOW</a>
+                    <a class="nav-link" href="booking.php">BOOK NOW</a>
                 </div>
                 <!-- Toggle Button for Dark/Light Mode in Offcanvas -->
             <div class="offcanvas-footer">
@@ -76,7 +76,7 @@
                 <a class="nav-link" href="#">OFFERS</a>
                 <a class="nav-link" href="#">ACCOMMODATIONS</a>
                 <a class="nav-link" href="#">FACILITIES</a>
-                <a class="book-btn d-lg-block" href="tel:+639634937082" style="color: white; text-decoration: none; border: 1px solid white; padding: 10px 20px; margin-left: 30px;">BOOK NOW</a>
+                <a class="book-btn d-lg-block" href="booking.PHP" style="color: white; text-decoration: none; border: 1px solid white; padding: 10px 20px; margin-left: 30px;">BOOK NOW</a>
 
                 <!-- Dark/Light Mode Toggle -->
                 <button id="toggle-mode" class="btn" style="margin-left: 15px; background: transparent; border: none; font-size: 24px;">
@@ -93,17 +93,21 @@
     <div class="container text-center">
         <h3 style="letter-spacing: 2px; color: white !important;">OHANA PRIVATE RESORT</h3>
         <h1 class="">PHOTO GALLERY</h1>
-        <p>Where Moments Become Memories</p>
-        <br>
-        <a href="#gallery">
-            <img src="img/play.png" width="100px" class="play-button">
-        </a>        
+        <p>Where Moments Become Memories</p>      
     </div>
 </div>
 
 <!-- Gallery Section -->
-<section id="gallery" class="gallery" style="padding: 100px 20px;">
+<section id="gallery" class="gallery" style="padding: 50px 20px;">
     <div class="container">
+        <div class="text-center mb-5 btn-div" style="padding: 15px 0 10px 0; position: sticky !important; background-color: #fffef3; top: 80px !important; z-index: 100 !important; width:100% !important;">
+            <div class="btn-group" role="group" style="position: sticky; top: 0; z-index: 100;">
+                <button type="button" class="btn active" onclick="filterGallery('all', this)">ALL</button>
+                <button type="button" class="btn" onclick="filterGallery('facilities', this)">FACILITIES</button>
+                <button type="button" class="btn" onclick="filterGallery('events', this)">EVENTS</button>
+                <button type="button" class="btn" onclick="filterGallery('views', this)">VIEWS</button>
+            </div>            
+        </div>
         <div class="row g-4" id="gallery-container">
             <!-- Gallery items will be injected here by JavaScript -->
         </div>
@@ -111,25 +115,10 @@
 </section>
 
 
-<!-- Modals will be injected here by JavaScript -->
 
 <!-- Footer -->
 <footer class="footer" style="width: 100%; padding: 50px 25px;">
     <div class="container text-center">
-        <!-- <div class="social-icons">
-            <a href="" target="_blank" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="" target="_blank" class="social-icon">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="" target="_blank" class="social-icon">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="" target="_blank" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-        </div> -->
         <p class="mt-3">© 2024 OHANA Private Resort. All rights reserved.</p>
     </div>
 </footer>
@@ -137,140 +126,102 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/bs5-lightbox@1.12.1/dist/index.bundle.min.js"></script>
 <script>
-    // Array of image data
-    const images = [
-    { src: 'img/ohana_imgs/photo (1).jpg', title: 'Gallery Image 1' },
-    { src: 'img/ohana_imgs/photo (2).jpg', title: 'Gallery Image 2' },
-    { src: 'img/ohana_imgs/photo (3).jpg', title: 'Gallery Image 3' },
-    { src: 'img/ohana_imgs/photo (4).jpg', title: 'Gallery Image 4' },
-    { src: 'img/ohana_imgs/photo (5).jpg', title: 'Gallery Image 5' },
-    { src: 'img/ohana_imgs/photo (6).jpg', title: 'Gallery Image 6' },
-    { src: 'img/ohana_imgs/photo (7).jpg', title: 'Gallery Image 7' },
-    { src: 'img/ohana_imgs/photo (8).jpg', title: 'Gallery Image 8' },
-    { src: 'img/ohana_imgs/photo (9).jpg', title: 'Gallery Image 9' },
-    { src: 'img/ohana_imgs/photo (10).jpg', title: 'Gallery Image 10' },
-    { src: 'img/ohana_imgs/photo (11).jpg', title: 'Gallery Image 11' },
-    { src: 'img/ohana_imgs/photo (12).jpg', title: 'Gallery Image 12' },
-    { src: 'img/ohana_imgs/photo (13).jpg', title: 'Gallery Image 13' },
-    { src: 'img/ohana_imgs/photo (14).jpg', title: 'Gallery Image 14' },
-    { src: 'img/ohana_imgs/photo (15).jpg', title: 'Gallery Image 15' },
-    { src: 'img/ohana_imgs/photo (16).jpg', title: 'Gallery Image 16' },
-    { src: 'img/ohana_imgs/photo (17).jpg', title: 'Gallery Image 17' },
-    { src: 'img/ohana_imgs/photo (18).jpg', title: 'Gallery Image 18' },
-    { src: 'img/ohana_imgs/photo (19).jpg', title: 'Gallery Image 19' },
-    { src: 'img/ohana_imgs/photo (20).jpg', title: 'Gallery Image 20' },
-    { src: 'img/ohana_imgs/photo (21).jpg', title: 'Gallery Image 21' },
-    { src: 'img/ohana_imgs/photo (22).jpg', title: 'Gallery Image 22' },
-    { src: 'img/ohana_imgs/photo (23).jpg', title: 'Gallery Image 23' },
-    { src: 'img/ohana_imgs/photo (24).jpg', title: 'Gallery Image 24' },
-    { src: 'img/ohana_imgs/photo (25).jpg', title: 'Gallery Image 25' },
-    { src: 'img/ohana_imgs/photo (26).jpg', title: 'Gallery Image 26' },
-    { src: 'img/ohana_imgs/photo (27).jpg', title: 'Gallery Image 27' },
-    { src: 'img/ohana_imgs/photo (28).jpg', title: 'Gallery Image 28' },
-    { src: 'img/ohana_imgs/photo (29).jpg', title: 'Gallery Image 29' },
-    { src: 'img/ohana_imgs/photo (30).jpg', title: 'Gallery Image 30' },
-    { src: 'img/ohana_imgs/photo (31).jpg', title: 'Gallery Image 31' },
-    { src: 'img/ohana_imgs/photo (32).jpg', title: 'Gallery Image 32' },
-    { src: 'img/ohana_imgs/photo (33).jpg', title: 'Gallery Image 33' },
-    { src: 'img/ohana_imgs/photo (34).jpg', title: 'Gallery Image 34' },
-    { src: 'img/ohana_imgs/photo (35).jpg', title: 'Gallery Image 35' },
-    { src: 'img/ohana_imgs/photo (36).jpg', title: 'Gallery Image 36' },
-    { src: 'img/ohana_imgs/photo (37).jpg', title: 'Gallery Image 37' },
-    { src: 'img/ohana_imgs/photo (38).jpg', title: 'Gallery Image 38' },
-    { src: 'img/ohana_imgs/photo (39).jpg', title: 'Gallery Image 39' },
-    { src: 'img/ohana_imgs/photo (40).jpg', title: 'Gallery Image 40' },
-    { src: 'img/ohana_imgs/photo (41).jpg', title: 'Gallery Image 41' },
-    { src: 'img/ohana_imgs/photo (42).jpg', title: 'Gallery Image 42' },
-    { src: 'img/ohana_imgs/photo (43).jpg', title: 'Gallery Image 43' },
-    { src: 'img/ohana_imgs/photo (44).jpg', title: 'Gallery Image 44' },
-    { src: 'img/ohana_imgs/photo (45).jpg', title: 'Gallery Image 45' },
-    { src: 'img/ohana_imgs/photo (46).jpg', title: 'Gallery Image 46' },
-    { src: 'img/ohana_imgs/photo (47).jpg', title: 'Gallery Image 47' },
-    { src: 'img/ohana_imgs/photo (48).jpg', title: 'Gallery Image 48' },
-    { src: 'img/ohana_imgs/photo (49).jpg', title: 'Gallery Image 49' },
-    { src: 'img/ohana_imgs/photo (50).jpg', title: 'Gallery Image 50' },
-    { src: 'img/ohana_imgs/photo (51).jpg', title: 'Gallery Image 51' },
-    { src: 'img/ohana_imgs/photo (52).jpg', title: 'Gallery Image 52' },
-    { src: 'img/ohana_imgs/photo (53).jpg', title: 'Gallery Image 53' },
-    { src: 'img/ohana_imgs/photo (54).jpg', title: 'Gallery Image 54' },
-    { src: 'img/ohana_imgs/photo (55).jpg', title: 'Gallery Image 55' },
-    { src: 'img/ohana_imgs/photo (56).jpg', title: 'Gallery Image 56' },
-    { src: 'img/ohana_imgs/photo (57).jpg', title: 'Gallery Image 57' },
-    { src: 'img/ohana_imgs/photo (58).jpg', title: 'Gallery Image 58' },
-    { src: 'img/ohana_imgs/photo (59).jpg', title: 'Gallery Image 59' },
-    { src: 'img/ohana_imgs/photo (60).jpg', title: 'Gallery Image 60' },
-    { src: 'img/ohana_imgs/photo (61).jpg', title: 'Gallery Image 61' },
-    { src: 'img/ohana_imgs/photo (62).jpg', title: 'Gallery Image 62' },
-    { src: 'img/ohana_imgs/photo (63).jpg', title: 'Gallery Image 63' },
-    { src: 'img/ohana_imgs/photo (64).jpg', title: 'Gallery Image 64' },
-    { src: 'img/ohana_imgs/photo (65).jpg', title: 'Gallery Image 65' },
-    { src: 'img/ohana_imgs/photo (66).jpg', title: 'Gallery Image 66' },
-    { src: 'img/ohana_imgs/photo (67).jpg', title: 'Gallery Image 67' },
-    { src: 'img/ohana_imgs/photo (68).jpg', title: 'Gallery Image 68' },
-    { src: 'img/ohana_imgs/photo (69).jpg', title: 'Gallery Image 69' },
-    { src: 'img/ohana_imgs/photo (70).jpg', title: 'Gallery Image 70' },
-    { src: 'img/ohana_imgs/photo (71).jpg', title: 'Gallery Image 71' },
-    { src: 'img/ohana_imgs/photo (72).jpg', title: 'Gallery Image 72' },
-    { src: 'img/ohana_imgs/photo (73).jpg', title: 'Gallery Image 73' },
-    { src: 'img/ohana_imgs/photo (74).jpg', title: 'Gallery Image 74' },
-    { src: 'img/ohana_imgs/photo (75).jpg', title: 'Gallery Image 75' },
-    { src: 'img/ohana_imgs/photo (76).jpg', title: 'Gallery Image 76' }
+// Array of image data
+const images = [
+    { src: 'img/ohana_imgs/photo (1).jpg', title: 'Gallery Image 1', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (3).jpg', title: 'Gallery Image 3', category: 'events' },
+    { src: 'img/ohana_imgs/photo (4).jpg', title: 'Gallery Image 4', category: 'views' },
+    { src: 'img/ohana_imgs/photo (5).jpg', title: 'Gallery Image 5', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (7).jpg', title: 'Gallery Image 7', category: 'events' },
+    { src: 'img/ohana_imgs/photo (8).jpg', title: 'Gallery Image 8', category: 'views' },
+    { src: 'img/ohana_imgs/photo (9).jpg', title: 'Gallery Image 9', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (11).jpg', title: 'Gallery Image 11', category: 'events' },
+    { src: 'img/ohana_imgs/photo (12).jpg', title: 'Gallery Image 12', category: 'views' },
+    { src: 'img/ohana_imgs/photo (13).jpg', title: 'Gallery Image 13', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (15).jpg', title: 'Gallery Image 15', category: 'events' },
+    { src: 'img/ohana_imgs/photo (16).jpg', title: 'Gallery Image 16', category: 'views' },
+    { src: 'img/ohana_imgs/photo (17).jpg', title: 'Gallery Image 17', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (19).jpg', title: 'Gallery Image 19', category: 'events' },
+    { src: 'img/ohana_imgs/photo (20).jpg', title: 'Gallery Image 20', category: 'views' },
+    { src: 'img/ohana_imgs/photo (21).jpg', title: 'Gallery Image 21', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (23).jpg', title: 'Gallery Image 23', category: 'events' },
+    { src: 'img/ohana_imgs/photo (24).jpg', title: 'Gallery Image 24', category: 'views' },
+    { src: 'img/ohana_imgs/photo (25).jpg', title: 'Gallery Image 25', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (27).jpg', title: 'Gallery Image 27', category: 'events' },
+    { src: 'img/ohana_imgs/photo (28).jpg', title: 'Gallery Image 28', category: 'views' },
+    { src: 'img/ohana_imgs/photo (29).jpg', title: 'Gallery Image 29', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (31).jpg', title: 'Gallery Image 31', category: 'events' },
+    { src: 'img/ohana_imgs/photo (32).jpg', title: 'Gallery Image 32', category: 'views' },
+    { src: 'img/ohana_imgs/photo (33).jpg', title: 'Gallery Image 33', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (35).jpg', title: 'Gallery Image 35', category: 'events' },
+    { src: 'img/ohana_imgs/photo (36).jpg', title: 'Gallery Image 36', category: 'views' },
+    { src: 'img/ohana_imgs/photo (37).jpg', title: 'Gallery Image 37', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (39).jpg', title: 'Gallery Image 39', category: 'events' },
+    { src: 'img/ohana_imgs/photo (40).jpg', title: 'Gallery Image 40', category: 'views' },
+    { src: 'img/ohana_imgs/photo (41).jpg', title: 'Gallery Image 41', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (43).jpg', title: 'Gallery Image 43', category: 'events' },
+    { src: 'img/ohana_imgs/photo (44).jpg', title: 'Gallery Image 44', category: 'views' },
+    { src: 'img/ohana_imgs/photo (45).jpg', title: 'Gallery Image 45', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (47).jpg', title: 'Gallery Image 47', category: 'events' },
+    { src: 'img/ohana_imgs/photo (48).jpg', title: 'Gallery Image 48', category: 'views' },
+    { src: 'img/ohana_imgs/photo (49).jpg', title: 'Gallery Image 49', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (51).jpg', title: 'Gallery Image 51', category: 'events' },
+    { src: 'img/ohana_imgs/photo (52).jpg', title: 'Gallery Image 52', category: 'views' },
+    { src: 'img/ohana_imgs/photo (53).jpg', title: 'Gallery Image 53', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (55).jpg', title: 'Gallery Image 55', category: 'events' },
+    { src: 'img/ohana_imgs/photo (56).jpg', title: 'Gallery Image 56', category: 'views' },
+    { src: 'img/ohana_imgs/photo (57).jpg', title: 'Gallery Image 57', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (59).jpg', title: 'Gallery Image 59', category: 'events' },
+    { src: 'img/ohana_imgs/photo (60).jpg', title: 'Gallery Image 60', category: 'views' },
+    { src: 'img/ohana_imgs/photo (61).jpg', title: 'Gallery Image 61', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (63).jpg', title: 'Gallery Image 63', category: 'events' },
+    { src: 'img/ohana_imgs/photo (64).jpg', title: 'Gallery Image 64', category: 'views' },
+    { src: 'img/ohana_imgs/photo (65).jpg', title: 'Gallery Image 65', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (67).jpg', title: 'Gallery Image 67', category: 'events' },
+    { src: 'img/ohana_imgs/photo (68).jpg', title: 'Gallery Image 68', category: 'views' },
+    { src: 'img/ohana_imgs/photo (69).jpg', title: 'Gallery Image 69', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (71).jpg', title: 'Gallery Image 71', category: 'events' },
+    { src: 'img/ohana_imgs/photo (72).jpg', title: 'Gallery Image 72', category: 'views' },
+    { src: 'img/ohana_imgs/photo (73).jpg', title: 'Gallery Image 73', category: 'facilities' },
+    { src: 'img/ohana_imgs/photo (75).jpg', title: 'Gallery Image 75', category: 'events' },
+    { src: 'img/ohana_imgs/photo (76).jpg', title: 'Gallery Image 76', category: 'views' }
 ];
 
 
-    // Function to create gallery items
-    function createGalleryItems() {
+    // Function to display gallery images
+    function displayGallery(category = 'all') {
         const galleryContainer = document.getElementById('gallery-container');
-        const modalsContainer = document.createElement('div');
-
-        images.forEach((image, index) => {
-            // Create gallery item
+        galleryContainer.innerHTML = '';
+        const filteredImages = category === 'all' ? images : images.filter(image => image.category === category);
+        
+        filteredImages.forEach(image => {
             const galleryItem = document.createElement('div');
-            galleryItem.className = 'col-12 col-md-6 col-lg-3';
+            galleryItem.className = 'col-lg-3 col-md-4 col-6';
             galleryItem.innerHTML = `
-                <a href="${image.src}" data-bs-toggle="lightbox" data-gallery="gallery" data-bs-title="${image.title}">
-                    <img src="${image.src}" class="img-fluid" alt="${image.title}">
+                <a href="${image.src}" data-bs-lightbox="gallery" data-bs-title="${image.title}">
+                    <img src="${image.src}" alt="${image.title}" class="img-fluid">
                 </a>
             `;
             galleryContainer.appendChild(galleryItem);
-
-            // Create modal
-            const modal = document.createElement('div');
-            modal.className = 'modal fade';
-            modal.id = `modal${index + 1}`;
-            modal.tabIndex = '-1';
-            modal.setAttribute('aria-labelledby', `modalLabel${index + 1}`);
-            modal.setAttribute('aria-hidden', 'true');
-            modal.innerHTML = `
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalLabel${index + 1}">${image.title}</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="${image.src}" class="img-fluid" alt="${image.title}">
-                        </div>
-                    </div>
-                </div>
-            `;
-            modalsContainer.appendChild(modal);
         });
+    }
+    
+    // Function to filter gallery
+    function filterGallery(category, button) {
+        // Remove 'active' class from all buttons
+        const buttons = document.querySelectorAll('.btn-group .btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
 
-        // Append modals to body
-        document.body.appendChild(modalsContainer);
+        // Add 'active' class to the clicked button
+        button.classList.add('active');
+
+        // Update gallery display
+        displayGallery(category);
     }
 
-    // Initialize gallery
-    createGalleryItems();
+    // Initial display of all images
+    displayGallery('all');
 
-    // Smooth scroll function
-    function scrollToSection(sectionId) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
 </script>
 </body>
 </html>
