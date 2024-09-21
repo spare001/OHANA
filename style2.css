@@ -5,6 +5,27 @@
     font-family: "Barlow Condensed", sans-serif;
 }
 
+.btn-group .btn {
+    background: none; /* Default background */
+    color: black; /* Text color */
+    padding: 10px; /* Padding */
+    border: none; /* Remove default border */
+    font-size: 14px;
+}
+
+.btn-group .btn:hover {
+    background: none; /* Default background */
+    color: orange; /* Text color */
+    padding: 10px; /* Padding */
+}
+
+.btn-group .btn.active {
+    /* border-bottom: 5px solid orange !important; */
+    color: orange;
+    border: none;
+    font-weight: 500 !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -18,6 +39,24 @@ body.dark-mode {
     color: white; /* Text color in dark mode */
 }
 
+body.dark-mode .btn.active {
+    color: orange !important;
+}
+
+body.dark-mode .btn-div {
+    background-color: black !important;
+}
+
+body.dark-mode .btn-group .btn {
+    color: white;
+}
+
+body.dark-mode .btn-group .btn:hover {
+    background: none; /* Default background */
+    color: orange; /* Text color */
+    padding: 10px; /* Padding */
+}
+
 body.dark-mode section {
     background-color: black !important; /* Background color of sections in dark mode */
 }
@@ -28,7 +67,6 @@ body.dark-mode p {
 
 body.dark-mode .navbar {
     background-color: black !important;
-    box-shadow: 0 4px 8px rgba(255, 157, 0, 0.3); /* Adds a shadow at the bottom */
 }
 
 body.dark-mode .navbar-nav .nav-link {
@@ -141,7 +179,6 @@ body.dark-mode .footer p {
     color: black;
 }
 
-
 h2 {
     background: linear-gradient(-90deg, rgba(253,211,27,1) 0%, rgba(237,70,7,1) 100%);
     -webkit-background-clip: text;
@@ -163,7 +200,7 @@ h2 {
     background-attachment: scroll; /* Keep the background fixed during scroll */
     width: 100%;
     padding: 20px;
-    height: 90vh;
+    height: 50vh;
 }
 
 .gallery-header {
@@ -179,7 +216,7 @@ h2 {
     background-attachment: scroll; /* Keep the background fixed during scroll */
     width: 100%;
     padding: 20px;
-    height: 90vh;
+    height: 50vh;
 }
 
 .heading h1 {
@@ -208,7 +245,6 @@ h2 {
     top: 0;
     z-index: 1000;
     background: #fffef3 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow at the bottom */
 }
 
 /* Base styles for the book button */
@@ -393,6 +429,10 @@ h2 {
 }
 
 
+/* Modal styling, if needed */
+.modal-content {
+    border-radius: 10px;
+}
 
 
 
@@ -422,6 +462,14 @@ h2 {
     .navbar {
         padding: 20px !important;
         height: 90px;
+    }
+
+    .about-header {
+        height: 90vh;
+    }
+    
+    .gallery-header {
+        height: 90vh;
     }
 }
 
