@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>OHANA Private Resort</title>
     <title>OHANA Private Resort</title>
     <link rel="icon" href="img/logo-png.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
@@ -20,6 +21,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
 
     <script src="mode.js"></script> 
+
+    <style>
+        /* Prevent overflow */
+        body, html {
+            overflow-x: hidden;
+        }
+    </style>
     <script>
         (function() {
             const savedMode = localStorage.getItem('mode');
@@ -107,12 +115,11 @@
 
 
 
-<section class="about-section" style="width: 100%; padding: 150px 25px;">
+<section class="about-section section-template" style="width: 100%; padding: 150px 25px;">
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
-            <!-- Left Column: Text -->
             <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3" data-aos="fade-right" data-aos-duration="800">
-                <h2 class="mb-3">Discover OHANA Private Resort</h2>
+                <h2 class="mb-3">About OHANA Private Resort</h2>
                 <p>
                     Welcome to OHANA Private Resort, your serene getaway where the ocean meets luxury. 
                     Our resort offers a unique blend of elegance and comfort, designed to provide you 
@@ -124,9 +131,10 @@
                     our many activities, OHANA offers something for everyone. Join us for an unforgettable 
                     experience and create memories that will last a lifetime.
                 </p>
+                <div class="d-flex justify-content-start">
+                    <a href="#more-info" class="btn viewmore-btn mt-4">View More</a>
+                </div>
             </div>
-
-            <!-- Right Column: Images -->
             <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
                 <div class="row">
                     <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center" data-aos="fade-down" data-aos-delay="1000">
