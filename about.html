@@ -56,7 +56,7 @@
                     <a class="nav-link" href="#">OFFERS</a>
                     <a class="nav-link" href="#">ACCOMMODATIONS</a>
                     <a class="nav-link" href="#">FACILITIES</a>
-                    <a class="nav-link" href="#">BOOK NOW</a>
+                    <a class="nav-link" href="booking.php">BOOK NOW</a>
                 </div>
                 <!-- Toggle Button for Dark/Light Mode in Offcanvas -->
             <div class="offcanvas-footer">
@@ -76,7 +76,7 @@
                 <a class="nav-link" href="#">OFFERS</a>
                 <a class="nav-link" href="#">ACCOMMODATIONS</a>
                 <a class="nav-link" href="#">FACILITIES</a>
-                <a class="book-btn d-lg-block" href="tel:+639634937082" style="color: white; text-decoration: none; border: 1px solid white; padding: 10px 20px; margin-left: 30px;">BOOK NOW</a>
+                <a class="book-btn d-lg-block" href="booking.php" style="color: white; text-decoration: none; border: 1px solid white; padding: 10px 20px; margin-left: 30px;">BOOK NOW</a>
 
                 <!-- Dark/Light Mode Toggle -->
                 <!-- Dark/Light Mode Toggle -->
@@ -95,10 +95,6 @@
         <h3 style="letter-spacing: 2px; color: white !important;">INTRODUCING</h3>
         <h1 class="">OHANA PRIVATE RESORT</h1>
         <p>Where Every Detail is Tailored for You</p>
-        <br>
-        <a href="#about">
-            <img src="img/play.png" width="100px" class="play-button">
-        </a>        
     </div>
 </div>
 
@@ -241,7 +237,6 @@
 
 
 
-
 <script>
     // Smooth scroll function
     function scrollToSection(sectionId) {
@@ -250,6 +245,16 @@
             element.scrollIntoView({ behavior: 'smooth' });
         }
     }
+
+    // Sticky navbar effect
+    window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar-custom');
+        if (window.scrollY > 50) { // Adjust the value '50' as needed
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
+    });
 </script>
 
 
