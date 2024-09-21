@@ -236,11 +236,6 @@ h2 {
     color: transparent;
 }
 
-
-.full-height {
-    margin-top: -90px;
-}
-
 /* Play Button Styles */
 .play-button {
     transition: transform 1s ease;
