@@ -13,12 +13,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <!-- AOS CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" rel="stylesheet">
-
-<!-- AOS JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
-
     <script src="mode.js"></script> 
     <script>
         (function() {
@@ -96,14 +90,14 @@
 </nav>
 
 
-<!-- Full-height section with background image and linear black overlay -->
-<div class="full-height position-relative d-flex align-items-center justify-content-center">
-    <!-- Text in the center -->
-    <div class="text-center text-white">
-        <h1>OHANA PRIVATE RESORT</h1>
-        <p>WHERE EVERY STAY FEELS LIKE HOME</p>
+    <!-- Full-height section with video background -->
+    <div class="full-height position-relative">
+        <!-- Video Background -->
+        <video class="video-background" autoplay muted loop>
+            <source src="img/landing.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
     </div>
-</div>
 
 
 
@@ -111,7 +105,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
             <!-- Left Column: Text -->
-            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3" data-aos="fade-right" data-aos-duration="800">
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3">
                 <h2 class="mb-3">Discover OHANA Private Resort</h2>
                 <p>
                     Welcome to OHANA Private Resort, your serene getaway where the ocean meets luxury. 
@@ -124,15 +118,19 @@
                     our many activities, OHANA offers something for everyone. Join us for an unforgettable 
                     experience and create memories that will last a lifetime.
                 </p>
+                <!-- View More Button -->
+                <!-- <div class="d-flex justify-content-start">
+                    <a href="#more-info" class="btn viewmore-btn mt-4">View More</a>
+                </div> -->
             </div>
 
             <!-- Right Column: Images -->
-            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+            <div class="col-lg-6 col-md-12">
                 <div class="row">
-                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center" data-aos="fade-down" data-aos-delay="1000">
+                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center">
                         <img src="img/about1.jpg" alt="Resort View" class="img-fluid" style="width: 400px; height: auto;">
                     </div>
-                    <div class="col-12 col-sm-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="col-12 col-sm-6 d-flex justify-content-center">
                         <img src="img/about2.jpg" alt="Resort Pool" class="img-fluid" style="width: 400px; height: auto;">
                     </div>
                 </div>
@@ -140,9 +138,6 @@
         </div>
     </div>
 </section>
-
-
-
 
 
 
@@ -166,19 +161,19 @@
         <div class="row d-flex justify-content-center align-items-center">
 
             <!-- Right Column: Images -->
-            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+            <div class="col-lg-6 col-md-12">
                 <div class="row">
-                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center" data-aos="fade-down" data-aos-delay="1000">
+                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center">
                         <img src="img/about1.jpg" alt="Resort View" class="img-fluid" style="width: 400px; height: auto;">
                     </div>
-                    <div class="col-12 col-sm-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="col-12 col-sm-6 d-flex justify-content-center">
                         <img src="img/about2.jpg" alt="Resort Pool" class="img-fluid" style="width: 400px; height: auto;">
                     </div>
                 </div>
             </div>
 
             <!-- Left Column: Text -->
-            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3" data-aos="fade-left" data-aos-duration="800">
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3">
                 <h2 class="mb-3">About OHANA Private Resort</h2>
                 <p>
                     Welcome to OHANA Private Resort, your serene getaway where the ocean meets luxury. 
@@ -204,9 +199,8 @@
 <section class="services" style="width: 100%; padding: 150px 25px;">
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
-
             <!-- Left Column: Text -->
-            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3" data-aos="fade-right" data-aos-duration="800">
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3">
                 <h2 class="mb-3" style="color: black;">About OHANA Private Resort</h2>
                 <p>
                     Welcome to OHANA Private Resort, your serene getaway where the ocean meets luxury. 
@@ -226,12 +220,12 @@
             </div>
 
             <!-- Right Column: Images -->
-            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+            <div class="col-lg-6 col-md-12">
                 <div class="row">
-                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center" data-aos="fade-down" data-aos-delay="1000">
+                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center">
                         <img src="img/about1.jpg" alt="Resort View" class="img-fluid" style="width: 400px; height: auto;">
                     </div>
-                    <div class="col-12 col-sm-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="col-12 col-sm-6 d-flex justify-content-center">
                         <img src="img/about2.jpg" alt="Resort Pool" class="img-fluid" style="width: 400px; height: auto;">
                     </div>
                 </div>
@@ -239,7 +233,6 @@
         </div>
     </div>
 </section>
-
 
 <div class="empty">
 
@@ -261,9 +254,22 @@
 <section class="about-section" style="width: 100%; padding: 150px 25px;">
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
+
+            <!-- Right Column: Images -->
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center">
+                        <img src="img/about1.jpg" alt="Resort View" class="img-fluid" style="width: 400px; height: auto;">
+                    </div>
+                    <div class="col-12 col-sm-6 d-flex justify-content-center">
+                        <img src="img/about2.jpg" alt="Resort Pool" class="img-fluid" style="width: 400px; height: auto;">
+                    </div>
+                </div>
+            </div>
+
             <!-- Left Column: Text -->
-            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3" data-aos="fade-right" data-aos-duration="800">
-                <h2 class="mb-3">Discover OHANA Private Resort</h2>
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 p-3">
+                <h2 class="mb-3">About OHANA Private Resort</h2>
                 <p>
                     Welcome to OHANA Private Resort, your serene getaway where the ocean meets luxury. 
                     Our resort offers a unique blend of elegance and comfort, designed to provide you 
@@ -275,23 +281,14 @@
                     our many activities, OHANA offers something for everyone. Join us for an unforgettable 
                     experience and create memories that will last a lifetime.
                 </p>
-            </div>
-
-            <!-- Right Column: Images -->
-            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
-                <div class="row">
-                    <div class="col-12 col-sm-6 d-flex mb-4 mb-sm-0 justify-content-center" data-aos="fade-down" data-aos-delay="1000">
-                        <img src="img/about1.jpg" alt="Resort View" class="img-fluid" style="width: 400px; height: auto;">
-                    </div>
-                    <div class="col-12 col-sm-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="1000">
-                        <img src="img/about2.jpg" alt="Resort Pool" class="img-fluid" style="width: 400px; height: auto;">
-                    </div>
+                <!-- View More Button -->
+                <div class="d-flex justify-content-start">
+                    <a href="#more-info" class="btn viewmore-btn mt-4">View More</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Footer -->
 <footer class="footer" style="width: 100%; padding: 50px 25px;">
     <div class="container text-center">
@@ -360,12 +357,7 @@
 
 
 
-<script>
-    AOS.init({
-        duration: 600, // Animation duration
-        easing: 'ease-in-out', // Animation easing
-    });
-</script>
+
 
 <script>
     // Smooth scroll function
