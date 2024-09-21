@@ -188,7 +188,7 @@ h2 {
     font-size: 70px;
     font-family: "Playfair Display", serif;
     margin-bottom: 0 !important;
-    padding: 25px;
+    padding: 0 25px;
 }
 
 .heading p, .heading-2 p {
