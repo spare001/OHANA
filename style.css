@@ -19,7 +19,7 @@ body.dark-mode {
 }
 
 body.dark-mode .full-height {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/ohana_imgs/photo\ \(41\).jpg') !important; /* Change this to your dark mode image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/facilities/photo\ \(33\).jpg') !important; /* Change this to your dark mode image */
 }
 
 body.dark-mode section {
@@ -460,7 +460,7 @@ h2 {
 
 /* Default background image */
 .full-height {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/ohana_imgs/photo (28).jpg') !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/facilities/photo\ \(23\).jpg') !important;
     background-size: cover; /* Cover the entire viewport */
     background-position: center center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating the image */
