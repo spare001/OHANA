@@ -185,6 +185,7 @@ h2 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+    font-family: "Playfair Display", serif;
 }
 
 .about-header {
@@ -193,7 +194,7 @@ h2 {
             rgba(0, 0, 0, 0.5), /* Black gradient with 50% opacity */
             rgba(0, 0, 0, 0.5) /* Black gradient with 50% opacity */
         ),
-        url('img/ohana_imgs/photo\ \(2\).jpg'); /* Replace with your image path */
+        url('img/views/photo\ \(15\).jpg'); /* Replace with your image path */
     background-size: cover; /* Cover the entire viewport */
     background-position: center center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating the image */
@@ -209,7 +210,7 @@ h2 {
             rgba(0, 0, 0, 0.5), /* Black gradient with 50% opacity */
             rgba(0, 0, 0, 0.5) /* Black gradient with 50% opacity */
         ),
-        url('img/ohana_imgs/photo\ \(69\).jpg'); /* Replace with your image path */
+        url('img/views/photo\ \(14\).jpg'); /* Replace with your image path */
     background-size: cover; /* Cover the entire viewport */
     background-position: center center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating the image */
