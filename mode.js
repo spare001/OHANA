@@ -43,4 +43,10 @@ function toggleDarkMode(buttonId, iconId) {
 document.addEventListener('DOMContentLoaded', function() {
     toggleDarkMode('toggle-mode-sm', 'toggle-icon-sm');
     toggleDarkMode('toggle-mode', 'toggle-icon');
+
+    var unavailableDates = [
+    { title: 'Unavailable', start: '2024-09-20', allDay: true, backgroundColor: 'red', borderColor: 'red' },
+    { title: 'Unavailable', start: '2024-09-21', allDay: true, backgroundColor: 'red', borderColor: 'red' },
+];
+
 });
